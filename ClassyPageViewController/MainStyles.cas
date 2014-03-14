@@ -1,0 +1,21 @@
+UIView.mainView {
+    background-color: gray;
+}
+
+UICollectionView {
+    background-color: clear;
+}
+
+CollectionViewCell {
+    content-view @{
+        layer @{
+            border-color: black;
+            border-width: 1px;
+        }
+        background-color: light-gray;
+    }
+
+    UILabel {
+        text-color: black;
+    }
+}
