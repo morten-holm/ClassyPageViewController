@@ -3,6 +3,7 @@
 // Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
 //
 
+#import <Classy.h>
 #import "CollectionViewCell.h"
 
 @interface CollectionViewCell()
@@ -14,6 +15,21 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        UIView *background = [[UIView alloc] initWithFrame:self.contentView.frame];
+        background.cas_styleClass = @"cellBackground";
+        [self.contentView addSubview:background];
+        
+        int number = 0;
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                CGRect frame = CGRectMake((j * 10), (i * 10), 10, 10);
+                UIView *view = [[UIView alloc] initWithFrame:frame];
+                NSString *styleClass = number++ % 2 == 0 ? @"even" : @"odd";
+                view.cas_styleClass = styleClass;
+                [background addSubview:view];
+            }
+        }
+        
         _label = [[UILabel alloc] initWithFrame:self.contentView.frame];
         _label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_label];

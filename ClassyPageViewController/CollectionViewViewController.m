@@ -19,7 +19,7 @@
     [super viewDidLoad];
 
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(100, 100);
+    layout.itemSize = CGSizeMake(90, 90);
     layout.minimumInteritemSpacing = 20;
     layout.minimumLineSpacing = 20;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -36,7 +36,7 @@
 @implementation CollectionViewViewController(UICollectionViewDataSource)
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10000;
+    return 1000;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
